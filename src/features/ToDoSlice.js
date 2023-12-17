@@ -12,13 +12,13 @@ export const toDoSlice = createSlice({
         clear: () => {
             return { items: [] }
         },
-        add: (state, newItem) => {
+        add: (state, action) => {
             return {
-                items: [...state.items, { newItem }]
+                items: [...state.items, action.payload]
             }
         },
         default: (state) => {
-            return { items: ["test", "test1"] }
+            return { items: state.items }
         }
     }
 })
